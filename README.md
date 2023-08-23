@@ -155,7 +155,7 @@ spec:
       type: s3
     tls:
       caName: openshift-service-ca.crt
-  storageClassName: ocs-storagecluster-cephfs
+  storageClassName: ocs-storagecluster-ceph-rbd
   tenants:
     mode: openshift-logging
 ```
