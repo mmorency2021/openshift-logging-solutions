@@ -3,7 +3,7 @@ This repository demonstrates how to configure OpenShift Cluster-Logging Stack Ve
 
 ## Loki Architecture 
 ### Loki Components Read and Write Path
-The read path is responsible for serving queries from Grafana or other tools. It consists of the following components:  
+The read path is responsible for serving queries from Grafana or other tools `OpenShift-Conole`. It consists of the following components:  
 - Querier: The querier is responsible for answering queries. It does this by reading the index and chunk stores.
 
 The write path is responsible for ingesting logs. It consists of the following components:  
