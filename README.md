@@ -2,8 +2,19 @@
 This repository demonstrates how to configure OpenShift Cluster-Logging Stack Vector as a forwarder to LokiStack, using an S3 bucket from OpenShift Data Foundation instead of AWS S3. It also shows how to integrate Loki to Grafana for logs views.
 
 ## Loki Architecture 
-### Loki Components
+### Loki Components Read and Write Path
+The read path is responsible for serving queries from Grafana or other tools. It consists of the following components:  
+- Querier: The querier is responsible for answering queries. It does this by reading the index and chunk stores.
+
+The write path is responsible for ingesting logs. It consists of the following components:  
+- Ingester: The ingester is responsible for receiving and parsing logs. It then stores the logs in the chunk store.
+- Compactor: The compactor periodically merges chunks together to save space.
+- Indexer: The indexer builds the index, which is used to quickly find logs.
+
+The Loki stack read and write path works with Vector by having Vector forward logs to the Loki write path. This can be done by configuring Vector to use the loki destination type and specifying the URL of the Loki write path.
 ![Loki Components](img/loki-components.png)
+
+Description of each components please click here  [Loki Architecture](https://hackernoon.com/grafana-loki-architecture-summary-and-running-in-kubernetes) or [here](https://grafana.com/docs/loki/latest/fundamentals/architecture/components/?ref=hackernoon.com#distributor)
 
 ### Loki Data flow with Vector
 ![Loki Dataflow With Vector](img/loki-dataflow.png)
