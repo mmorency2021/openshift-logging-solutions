@@ -12,6 +12,7 @@ The write path is responsible for ingesting logs. It consists of the following c
 - Indexer: The indexer builds the index, which is used to quickly find logs.
 
 The Loki stack read and write path works with Vector by having Vector forward logs to the Loki write path. This can be done by configuring Vector to use the loki destination type and specifying the URL of the Loki write path.
+
 ![Loki Components](img/loki-components.png)
 
 Description of each components please click here  [Loki Architecture](https://hackernoon.com/grafana-loki-architecture-summary-and-running-in-kubernetes) or [here](https://grafana.com/docs/loki/latest/fundamentals/architecture/components/?ref=hackernoon.com#distributor)
