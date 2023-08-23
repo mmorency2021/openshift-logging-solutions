@@ -1,6 +1,13 @@
 # openshift-logging-solutions
 This repository demonstrates how to configure OpenShift Cluster-Logging Stack Vector as a forwarder to LokiStack, using an S3 bucket from OpenShift Data Foundation instead of AWS S3. It also shows how to integrate Loki to Grafana for logs views.
 
+## Loki Architecture 
+### Loki Components
+![Loki Components](img/loki-components.png)
+
+### Loki Data flow with Vector
+![Loki Dataflow With Vector](img/loki-dataflow.png)
+
 ## Prerequisites
 In order to install and configure OpenShift Logging the following prerequisites must be met before starting the process.
 Determining the supported Openshift Logging release according to the OCP version.
@@ -27,7 +34,7 @@ metadata:
 ```
 ```shellSession
 $ oc apply -f 01_clo_client_ns.yaml
-```shellSession
+```
 - Create CLO OperatorGroup 
 02_clo_client_og.yaml:
 ```yaml
