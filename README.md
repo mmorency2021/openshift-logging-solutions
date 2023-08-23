@@ -1,5 +1,5 @@
 # openshift-logging-solutions
-This repo will show how to use OpenShift Cluster-Logging Stack Vector as Forwarder instead of using Fluentd. From Client like DU/CU SNO/MMO Clusters can forward APP, AUDIT and INFRA Logs to centralize Logging-HUB to External Elasticsearch Server
+This repository demonstrates how to configure OpenShift Cluster-Logging Stack Vector as a forwarder to LokiStack, using an S3 bucket from OpenShift Data Foundation instead of AWS S3. It also shows how to integrate Loki to Grafana for logs views.
 
 ## Prerequisites
 In order to install and configure OpenShift Logging the following prerequisites must be met before starting the process.
@@ -25,8 +25,9 @@ metadata:
   labels:
     openshift.io/cluster-monitoring: "true"
 ```
+```shellSession
 $ oc apply -f 01_clo_client_ns.yaml
-
+```shellSession
 - Create CLO OperatorGroup 
 02_clo_client_og.yaml:
 ```yaml
@@ -39,8 +40,9 @@ spec:
   targetNamespaces:
     - openshift-logging
 ```
+```shellSession
 $ oc apply -f 02_clo_client_og.yaml
-
+```
 - Create CLO Subscription   
 03_clo_client_subs.yaml:
 ```yaml
@@ -55,7 +57,9 @@ spec:
   source: redhat-operators 
   sourceNamespace: openshift-marketplace
 ```
+```shellSession
 $ oc apply -f 03_clo_client_subs.yaml
+```
 
 ### Deploy loki operator
 - **Prerequisites:**
