@@ -18,6 +18,9 @@ The Loki stack read and write path works with Vector by having Vector forward lo
 Description of each components please click here  [Loki Architecture](https://hackernoon.com/grafana-loki-architecture-summary-and-running-in-kubernetes) or [here](https://grafana.com/docs/loki/latest/fundamentals/architecture/components/?ref=hackernoon.com#distributor)
 
 ### Loki Data flow with Vector
+Loki receives data from `vector` (or other agents such as fluentd)
+creates data blocks (chunks), an index, and loads them into a long-term storage a user uses LogQL to fetch logs from `Grafana` or from `OpenShift-Console`
+
 ![Loki Dataflow With Vector](img/loki-dataflow.png)
 
 ## Prerequisites
