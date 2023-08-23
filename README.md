@@ -1,5 +1,5 @@
 # openshift-logging-solutions
-This repository demonstrates how to configure OpenShift Cluster-Logging Stack Vector as a forwarder to LokiStack, using an S3 bucket from OpenShift Data Foundation instead of AWS S3. It also shows how to integrate Loki to Grafana for logs views.
+This repository provides instructions on how to configure OpenShift Cluster-Logging Stack to use Vector as a forwarder to LokiStack, and integrate an S3 bucket from OpenShift Data Foundation instead of AWS S3. It also shows how to integrate Loki with Grafana for viewing logs.
 
 ## Loki Architecture 
 ### Loki Components Read and Write Path
