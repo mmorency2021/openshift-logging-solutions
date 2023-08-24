@@ -9,7 +9,7 @@
   * [Create an ObjectBucketClaim in openshift-logging namespace](#create-an-objectbucketclaim-in-openshift-logging-namespace)
   * [Create an Object Storage secret with keys as follows](#create-an-object-storage-secret-with-keys-as-follows)
     + [Create an instance of LokiStack by referencing the secret name and type as s3](#create-an-instance-of-lokistack-by-referencing-the-secret-name-and-type-as-s3)
-    + [Create or edit a ClusterLogging CR](#create-or-edit-a-clusterlogging-cr)
+  * [Create or edit a ClusterLogging CR](#create-or-edit-a-clusterlogging-cr)
   * [Create CLO CLF to forward logs from Loki to Grafana](#create-clo-clf-to-forward-logs-from-loki-to-grafana)
   * [Integrate Loki to Grafana](#integrate-loki-to-grafana)
   * [Final Check Outputs](#final-check-outputs)
