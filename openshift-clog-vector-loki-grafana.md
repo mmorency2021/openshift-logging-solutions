@@ -188,6 +188,29 @@ logging-loki-query-frontend-759465798d-tz9vz   1/1     Running   0          60m
 logging-view-plugin-5f95bdb9ff-9n6rj           1/1     Running   0          75m
 ```
 
+## Create or edit a ClusterLogging CR
+Update CLO CR logStore type to `lokistack and collection to `vector`
+
+cluster-clo-vector-cr.yaml:
+```yaml
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogging
+metadata:
+  name: instance
+  namespace: openshift-logging
+spec:
+  managementState: Managed
+  logStore:
+    type: lokistack
+    lokistack:
+      name: logging-loki
+  collection:
+    type: vector
+```
+```shellSession
+$ oc apply -f cluster-clo-vector-cr.yaml
+```
+
 ## Create CLO CLF to forward logs from Loki to Grafana
 **Note:** loki logs can be viewed fron OpenShift Console by default, so there is no need to have extra steps but to view logs from grafana from loki.grafana.com.
       These following steps are required to integrate Loki to Grafana. 
